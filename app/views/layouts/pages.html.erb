@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <title>catanoa&#x99; - iPad und iPhone in Vertrieb und Außendienst - Lösungen für Messen, Außendienst und Verkauf</title>
+    <%= stylesheet_link_tag 'application', :media => 'screen' %>
+    <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
+    <%= yield :scripts %>
+    <script type="text/javascript" src="//use.typekit.net/kmf2bix.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  <head>
+  <body>
+    <div class="head">
+      <div class="container">
+        <div class="content navigation">
+          <ul>
+            <%= navigation_item label: 'Home',                    item: 'index',      path: root_path %>
+            <%= navigation_item label: 'Im Detail',               item: 'details',    path: details_path %>
+            <%= navigation_item label: 'Individuelle Lösungen',   item: 'use_cases',  path: use_cases_path %>
+            <%= navigation_item label: 'FAQ',                     item: 'faq',        path: faq_path %>
+            <%= navigation_item label: 'Kontakt',                 item: 'contact',    path: contact_path %>
+            <%= navigation_item label: 'Anmeldung',               item: 'login',      path: login_path %>
+            <%= yield :navigation %>
+          </ul>
+        </div>
+      </div>
+      <div class="stage">
+        <% if content_for?(:stage) %>
+          <%= yield :stage %>
+        <% else %>
+          <div class="container">
+            <div class="half">
+              <h1><span>Ich bin eine total</span><br /><span>tolle Headline</span></h1>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="page-wrapper">
+      <%= yield %>
+    </div>
+
+    <div class="footer">
+      <div class="container">
+        <div class="content">
+            &copy; provideal GmbH
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
