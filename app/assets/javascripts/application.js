@@ -13,3 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+//= require 'jquery.nivo.slider'
+//= require 'jquery.nivo.slider.pack'
+//= require 'nivo-slider'

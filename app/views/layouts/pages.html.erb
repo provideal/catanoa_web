@@ -13,17 +13,28 @@
       <div class="container">
         <div class="content navigation">
           <ul>
-            <%= navigation_item label: 'Home',                    item: 'index',      path: root_path %>
-            <%= navigation_item label: 'Im Detail',               item: 'details',    path: details_path %>
-            <%= navigation_item label: 'Individuelle Lösungen',   item: 'use_cases',  path: use_cases_path %>
-            <%= navigation_item label: 'FAQ',                     item: 'faq',        path: faq_path %>
-            <%= navigation_item label: 'Kontakt',                 item: 'contact',    path: contact_path %>
-            <%= navigation_item label: 'Anmeldung',               item: 'login',      path: login_path %>
+            <%= navigation_item :label => 'Home',                    :item => 'index',      :path => root_path %>
+            <%= navigation_item :label => 'Im Detail',               :item => 'details',    :path => details_path %>
+            <%= navigation_item :label => 'Individuelle Lösungen',   :item => 'use_cases',  :path => use_cases_path %>
+            <%= navigation_item :label => 'FAQ',                     :item => 'faq',        :path => faq_path %>
+            <%= navigation_item :label => 'Kontakt',                 :item => 'contact',    :path => contact_path %>
+            <%= navigation_item :label => 'Anmeldung',               :item => 'login',      :path => login_path,    :class => 'last' %>
             <%= yield :navigation %>
           </ul>
         </div>
       </div>
       <div class="stage">
+        <div id="slider" class="nivoSlider">
+          <%= image_tag 'slider/slider01.jpg', :title => '#slider01_title', 'data-thumb'.to_sym => '/assets/slider/slider01.jpg' %>
+          <%= image_tag 'slider/slider02.jpg', :title => '#slider02_title', 'data-thumb'.to_sym => '/assets/slider/slider02.jpg' %>
+          <%= image_tag 'slider/slider03.jpg', :title => '#slider03_title', 'data-thumb'.to_sym => '/assets/slider/slider03.jpg' %>
+          <%= image_tag 'slider/slider04.jpg', :title => '#slider04_title', 'data-thumb'.to_sym => '/assets/slider/slider04.jpg' %>
+        </div>
+        <div id="slider01_title" class="nivo-html-caption">Das ist Bild 1. Yeah!</div>
+        <div id="slider02_title" class="nivo-html-caption">Das ist Bild 2. Yeah!</div>
+        <div id="slider03_title" class="nivo-html-caption">Das ist Bild 3. Yeah!</div>
+        <div id="slider04_title" class="nivo-html-caption">Das ist Bild 4. Yeah!</div>
+
         <% if content_for?(:stage) %>
           <%= yield :stage %>
         <% else %>
