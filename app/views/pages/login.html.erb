@@ -6,21 +6,21 @@
       <p>
         <strong>Bitte melden Sie sich mit Ihren Zugangsdaten an:</strong>
       </p>
-      <form class="simple_form form_vertical">
+      <form class="simple_form form_vertical" action="http://admin.catanoa.com/sessions" method="post">
         <div>
           <label>E-Mail/Subdomain:</label>
-          <input type="text">
+          <input type="text" name="email" id="email">
         </div>
         <div>
           <label>Passwort:</label>
-          <input type="text">
+          <input type="password" name="password" id="password">
         </div>
         <div>
-          <input type="submit" value="Einloggen">
+          <input type="submit" value="Anmelden">
         </div>
       </form>
       <p class="last smalltxt">
-        <a href="#">Ich habe mein Passwort vergessen</a><br/>
+        <!-- <a href="#">Ich habe mein Passwort vergessen</a><br/> -->
         <a href="http://register.catanoa.com">Ich möchte mich registrieren</a>
     </div>
   </div>

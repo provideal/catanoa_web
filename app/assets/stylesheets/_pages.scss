@@ -234,7 +234,7 @@ a {
     input[type=submit] { margin-left: 0}
   }
 
-  input[type=text], input[type=number], input[type=tel], input[type=email], textarea {
+  input[type=text], input[type=number], input[type=tel], input[type=email], input[type=password], textarea {
     border-left:1px solid transparent;
     border-right:1px solid $light-gray-color;
     border-top:1px solid $light-gray-color;
@@ -246,12 +246,16 @@ a {
     font-size:18px;
     color:$primary-color;
   }
+  
+  textarea {
+    height: 150px;
+  }
 
   select{
     font-size: 14px;
   }
 
-  input[type=text]:focus {background:#FFFFCC;}
+  input[type=text]:focus, input[type=password]:focus, input[type=tel]:focus, input[type=email]:focus, input[type=number]:focus, textarea:focus {background:#FFFFCC;}
 
   div {padding-bottom:$padding;}
 
@@ -261,3 +265,20 @@ a {
 
 }
 
+.alert-error {
+  background-color: #b94a48;
+  padding: 10px;
+  color: $white-color;
+  font-weight: bold;
+}
+
+.alert-info {
+  background-color: $primary-color;
+  padding: 10px;
+  color: $white-color;
+  font-weight: bold;
+}
+
+.help-inline {
+ color: #b94a48; 
+}

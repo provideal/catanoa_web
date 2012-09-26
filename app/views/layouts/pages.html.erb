@@ -51,6 +51,13 @@
     </div>
 
     <div class="page-wrapper">
+      <div class="container">
+        <div class="row-fluid">
+          <%= render 'pages/alerts', flash: flash %>
+          <%= yield %>
+        </div>
+      </div>
+      
       <%= yield %>
     </div>
 

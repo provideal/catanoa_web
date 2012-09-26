@@ -19,6 +19,15 @@
            <a href="mailto:team@metaminded.com">team@metaminded.com</a><br />
            <a href="http://www.metaminded.com">www.metaminded.com</a>
          </p>
+         
+         <%= simple_form_for @contact, :url => contact_path do |f| %>
+          <%= f.input :name, :label => 'Name' %>
+          <%= f.input :company, :label => 'Firmenname' %>
+          <%= f.input :email, :label => 'E-Mail-Adresse' %>
+          <%= f.input :phone, :label => 'Telefonnummer' %>
+          <%= f.input :remark, :label => 'Bemerkung', :as => :text %>
+          <%= f.submit :value => 'Kontaktanfrage senden' %>
+         <% end %>
        </div>
      </div>
      <div class="half">
@@ -58,7 +67,7 @@
    <div class="container">
      <div class="third">
        <div class="content">
-           <img src="images/dummy-small.jpg"/>
+          <%= image_tag 'dummy-small.jpg' %>
        </div>
      </div>
      <div class="twothird">
@@ -80,7 +89,7 @@
      </div>
      <div class="third">
        <div class="content">
-           <img src="images/dummy-small.jpg"/>
+         <%= image_tag 'dummy-small.jpg' %>
        </div>
      </div>
    </div>

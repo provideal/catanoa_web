@@ -1,0 +1,5 @@
+<% flash.each do |type, message| %>
+  <%= content_tag :div, id: 'flash', class: flash_message_class(type) + ' alert-fade', style: 'text-align: center' do %>
+    <%= message %>
+  <% end %>
+<% end %>

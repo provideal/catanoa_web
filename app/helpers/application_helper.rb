@@ -22,4 +22,19 @@ module ApplicationHelper
     end 
   end
   
+  def flash_message_class(type)
+    case type
+      when :alert
+        "alert alert-error"
+      when :error
+        "alert alert-error"
+      when :notice
+        "alert alert-info"
+      when :success
+        "alert alert-info"
+      else
+        "alert #{type.to_s}"
+    end
+  end
+  
 end
