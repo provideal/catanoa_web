@@ -14,7 +14,7 @@ jQuery(function($){
     manualAdvance: false, // Force manual transitions
     prevText: '', // Prev directionNav text
     nextText: '', // Next directionNav text
-    randomStart: false, // Start on a random slide
+    randomStart: true, // Start on a random slide
     beforeChange: function(){}, // Triggers before a slide transition
     afterChange: function(){}, // Triggers after a slide transition
     slideshowEnd: function(){}, // Triggers after all slides have been shown

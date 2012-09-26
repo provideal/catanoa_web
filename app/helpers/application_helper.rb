@@ -11,4 +11,15 @@ module ApplicationHelper
     end
   end
   
+  def headline(*titles)
+    content_for :headline do
+      tags = []
+      titles.each do |t|
+        tags << content_tag(:span, t)
+        tags << tag(:br)
+      end
+      concat(tags.inject(:+))
+    end 
+  end
+  
 end

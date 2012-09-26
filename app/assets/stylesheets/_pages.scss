@@ -86,7 +86,14 @@ a {
 
 .head {
   @include clearfix();
-  .container {margin-top:$padding; height:120px; z-index:1000; position:relative; background: $white-color image-url('logo.jpg') top left no-repeat;}
+  
+  .container {
+    position:relative; 
+    margin-top:$padding; 
+    height:100px; 
+    z-index:1000;
+    background: $white-color image-url('logo.jpg') top left no-repeat;
+  }
 }
 
 .navigation {
@@ -95,7 +102,7 @@ a {
   ul {
     list-style:none;
     float:right;
-    margin-top:32px;
+    margin-top:22px;
     border:1px solid transparent;
   }
 
@@ -121,27 +128,25 @@ a {
 
   li:hover {
     color:$primary-color;
-  }
+  }  
 }
 
 .stage {
   height:440px-$padding*12;
   margin-top:-120px;
-
+  
   .container {
+    z-index: 0;
     background:transparent;
-  }
-
-  h1 {
-    margin-top:-240px;
-    line-height:$line-height*2;
-    color:$white-color;
-    span {background:$primary-color; padding:0 $padding 0 $padding;}
   }
 }
 
-.slider {
-  height: 100px;
+#slider {
+  height: 440px;
+}
+
+.page-wrapper {
+  margin-top: -40px;
 }
 
 .footer {
@@ -153,7 +158,10 @@ a {
 
 // content containers
 
-.content-wrapper {@include clearfix(); padding-top:$padding;}
+.content-wrapper {
+  @include clearfix(); 
+  padding-top:$padding;
+}
 
 .content {
   @include clearfix();
@@ -163,6 +171,20 @@ a {
 
   a:hover {color:$primary-color;}
   a:before {content:"→ ";}
+  
+  .headline {
+    h1 {
+      margin:$padding 0 0 -18px;
+      line-height:$line-height*2;
+      color:$white-color;
+      overflow:hidden;
+      z-index:-1;
+      span {
+        background:$primary-color; 
+        padding:0 $padding 0 $padding;
+      }
+    }
+  }
 }
 
 .half {
@@ -181,18 +203,28 @@ a {
 // login
 // -------------------------------------------------------------
 
-.login {background:rgba(255, 255, 255, 0.9); margin-top:-88px; height:320px;}
+.login {
+  background:rgba(255, 255, 255, 0.9); 
+  margin-top:-60px; 
+  margin-left: 50%;
+  height:320px;
+  }
 
 // -------------------------------------------------------------
 // form-stuff
 // -------------------------------------------------------------
 
 .simple_form {
-  label {float:left; width:240px; border-top:1px solid transparent; border-bottom:1px solid transparent; font-size:$font-size;}
+  label {
+    float:left; 
+    width:240px; 
+    border-top:1px solid transparent; 
+    border-bottom:1px solid transparent; 
+    font-size:$font-size;
+  }
+  
   fieldset {
-
     legend {display:none;}
-
   }
 
   &.form-vertical {

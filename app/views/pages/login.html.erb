@@ -1,30 +1,27 @@
-<%= content_for :stage do %>
-  <div class="container">
-    <div class="half">
-        <h1><span>Anmelden</span><br /><span>catanoa Verwaltung</span></h1>
-    </div>
-    <div class="half login">
-      <div class="content">
-        <p>
-          <strong>Bitte melden Sie sich mit Ihren Zugangsdaten an:</strong>
-        </p>
-        <form class="simple_form form_vertical">
-          <div>
-            <label>E-Mail/Subdomain:</label>
-            <input type="text">
-          </div>
-          <div>
-            <label>Passwort:</label>
-            <input type="text">
-          </div>
-          <div>
-            <input type="submit" value="Einloggen">
-          </div>
-        </form>
-        <p class="last smalltxt">
-          <a href="#">Ich habe mein Passwort vergessen</a><br/>
-          <a href="http://register.catanoa.com">Ich möchte mich registrieren</a>
-      </div>
+<%= headline 'Anmeldung' %>
+
+<%= content_for :login do %>
+  <div class="half login">
+    <div class="content">
+      <p>
+        <strong>Bitte melden Sie sich mit Ihren Zugangsdaten an:</strong>
+      </p>
+      <form class="simple_form form_vertical">
+        <div>
+          <label>E-Mail/Subdomain:</label>
+          <input type="text">
+        </div>
+        <div>
+          <label>Passwort:</label>
+          <input type="text">
+        </div>
+        <div>
+          <input type="submit" value="Einloggen">
+        </div>
+      </form>
+      <p class="last smalltxt">
+        <a href="#">Ich habe mein Passwort vergessen</a><br/>
+        <a href="http://register.catanoa.com">Ich möchte mich registrieren</a>
     </div>
   </div>
 <% end %>
