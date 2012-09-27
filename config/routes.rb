@@ -56,11 +56,11 @@ CatanoaWeb::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
 
-  match 'details'   => 'pages#details',     :path => 'details'
-  match 'use_cases' => 'pages#use_cases',   :path => 'individuelle_loesungen'
-  match 'faq'       => 'pages#faq',         :path => 'faq'
-  match 'contact'   => 'pages#contact',     :path => 'kontakt'
-  match 'login'     => 'pages#login',       :path => 'anmeldung'
+  match 'details'       => 'pages#details',       :path => 'details'
+  match 'use_cases'     => 'pages#use_cases',     :path => 'individuelle_loesungen'
+  match 'faq'           => 'pages#faq',           :path => 'faq'
+  match 'contact'       => 'pages#contact',       :path => 'kontakt'
+  match 'toggle_login'  => 'pages#toggle_login'
   
   root :to  => 'pages#index'
   

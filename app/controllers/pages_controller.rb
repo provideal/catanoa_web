@@ -33,7 +33,10 @@ class PagesController < ApplicationController
     end
   end
   
-  def login
+  def toggle_login
+    session[:login_visible] ||= false
+    session[:login_visible] = !session[:login_visible] 
+    render :json => {:login_visible => session[:login_visible]}
   end
   
 end

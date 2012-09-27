@@ -7,6 +7,14 @@
     <%= yield :scripts %>
     <script type="text/javascript" src="//use.typekit.net/kmf2bix.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <% if session[:login_visible] %>
+      <script type="text/javascript">
+        jQuery(function($){
+          $("#login_link").css({color: '#29ABE2'});
+          $("#login").show();          
+        });
+      </script>
+    <% end %>
   <head>
   <body>
     <div class="head">
@@ -18,7 +26,7 @@
             <%= navigation_item :label => 'Individuelle Lösungen',   :item => 'use_cases',  :path => use_cases_path %>
             <%= navigation_item :label => 'FAQ',                     :item => 'faq',        :path => faq_path %>
             <%= navigation_item :label => 'Kontakt',                 :item => 'contact',    :path => contact_path %>
-            <%= navigation_item :label => 'Anmeldung',               :item => 'login',      :path => login_path,    :class => 'last' %>
+            <li><a id="login_link">Anmeldung</a></li>
             <%= yield :navigation %>
           </ul>
         </div>
@@ -27,7 +35,30 @@
           <div class="half headline">
             <h1><%= yield :headline %></h1>
           </div>          
-          <%= yield :login %>
+          
+          <div class="half login" id="login">
+            <div class="content">
+              <p>
+                <strong>Bitte melden Sie sich mit Ihren Zugangsdaten an:</strong>
+              </p>
+              <form class="simple_form form_vertical" action="http://admin.catanoa.com/sessions" method="post">
+                <div>
+                  <label>E-Mail/Subdomain:</label>
+                  <input type="text" name="email" id="email">
+                </div>
+                <div>
+                  <label>Passwort:</label>
+                  <input type="password" name="password" id="password">
+                </div>
+                <div>
+                  <input type="submit" value="Anmelden">
+                </div>
+              </form>
+              <p class="last smalltxt">
+                <!-- <a href="#">Ich habe mein Passwort vergessen</a><br/> -->
+                <a href="http://register.catanoa.com">Ich möchte mich registrieren</a>
+            </div>
+          </div>
         </div>        
       </div>
       <div class="stage">
