@@ -28,6 +28,7 @@ h1 {
   font-family: "museo-slab",serif;
   font-weight: 700;
   font-size: $font-size*2;
+  color:$primary-color;
 }
 
 h2 {
@@ -80,9 +81,12 @@ a {
 .container {
     @include container();
     @include pie-clearfix();
-    background:$white-color;
+    background-color:$white-color;
     overflow:visible;   
 }
+
+.trans {background-color:$light-gray-color !important;}
+
 
 .head {
   @include clearfix();
@@ -92,7 +96,7 @@ a {
     margin-top:$padding; 
     height:100px; 
     z-index:1000;
-    background: rgba(255, 255, 255, 0.9) image-url('logo.png') top left no-repeat;
+    background: $white-color image-url('logo.png') top left no-repeat;
   }
 }
 
@@ -114,11 +118,11 @@ a {
 
   li.last {
     padding-right:0px;
+    margin-top:-4px;
   }
 
   li.active {
     color:$primary-color;
-    font-weight:bold;
     //padding-top:$line-height/2;
   }
 
@@ -151,16 +155,20 @@ a {
 
 .footer {
   @include clearfix();
-  margin-top:$padding;
-  background:$primary-color; 
-  .container {color:$white-color; background:transparent;}
+  //background:$primary-color; 
+  margin-top:$padding*2;
+  .container, .content {font-size: $font-size*0.8; background:transparent;}
+  .container {border-top: 1px solid $semi-gray-color;}
 }
 
 // content containers
 
 .content-wrapper {
   @include clearfix(); 
-  padding-top:$padding;
+  padding:$padding 0;
+
+  &.gray {background-color: $light-gray-color;}
+
 }
 
 .content {
@@ -192,8 +200,26 @@ a {
   @include column(12); 
 }
 
+.all {
+  @include column(24); 
+}
+
 .third {
   @include column(8); 
+  &.blue {
+    background: $primary-color; 
+    color: $white-color; 
+    a:hover {
+      color:$white-color;
+    }
+  }
+  &.gray {
+    background: $semi-gray-color; 
+    color: $white-color; 
+    a:hover {
+      color:$white-color;
+    }
+  }
 }
 
 .twothird {
@@ -284,3 +310,25 @@ a {
 .help-inline {
  color: #b94a48; 
 }
+
+// -------------------------------------------------------------
+// accordion
+// -------------------------------------------------------------
+
+#accordion {
+  margin-top:$padding*2;
+  a:before {content: "" !important;}
+  h3 {font-size:$font-size+1.5;}
+
+}
+.ui-accordion-header {padding:$padding/2 $padding; border-top:1px solid $light-gray-color; border-bottom:1px solid $light-gray-color; margin-bottom:8px;
+}
+.ui-accordion-content {padding:$padding $padding $padding*2 $padding; border-bottom:1px solid $light-gray-color; margin-bottom:8px;}
+.ui-state-active {
+  background:$primary-color; 
+  color:$white-color;
+  a:hover {color:#fff;}
+  a:before {
+    color:$white-color !important;
+    }
+  }

@@ -16,3 +16,4 @@
 //= require 'jquery.nivo.slider.pack'
 //= require 'nivo-slider'
 //= require 'pages'
+//= require 'jquery-ui'

@@ -16,4 +16,8 @@ jQuery(function($){
       login_visible(data.login_visible);
     });
   });
+  $(document).ready(function() {
+    $("#accordion").accordion({active: false});
+  });
 });
+

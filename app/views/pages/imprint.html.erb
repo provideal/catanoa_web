@@ -1,4 +1,4 @@
-<%= headline 'Kontakt' %>
+<%= headline 'Impressum' %>
 
  <div class="content-wrapper">
    <div class="container">
@@ -7,14 +7,7 @@
          <h1>Kontaktieren Sie uns.</h1>
          <p>Gerne stehen wir für Ihre Fragen rund um catanoa zur Verfügung.</p>
          <p>
-           <%= simple_form_for @contact, :url => contact_path do |f| %>
-            <%= f.input :name, :label => 'Name' %>
-            <%= f.input :company, :label => 'Firmenname' %>
-            <%= f.input :email, :label => 'E-Mail-Adresse' %>
-            <%= f.input :phone, :label => 'Telefonnummer' %>
-            <%= f.input :remark, :label => 'Bemerkung', :as => :text %>
-            <%= f.submit :value => 'Kontaktanfrage senden' %>
-           <% end %>
+           
         </p>
        </div>
      </div>

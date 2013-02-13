@@ -23,10 +23,12 @@
           <ul>
             <%= navigation_item :label => 'Home',                    :item => 'index',      :path => root_path %>
             <%= navigation_item :label => 'Im Detail',               :item => 'details',    :path => details_path %>
-            <%= navigation_item :label => 'Individuelle Lösungen',   :item => 'use_cases',  :path => use_cases_path %>
+            <%= navigation_item :label => 'Individuell',   :item => 'use_cases',  :path => use_cases_path %>
             <%= navigation_item :label => 'FAQ',                     :item => 'faq',        :path => faq_path %>
             <%= navigation_item :label => 'Kontakt',                 :item => 'contact',    :path => contact_path %>
-            <li><a id="login_link">Anmeldung</a></li>
+            <li><a href="http://register.catanoa.com">Registrieren</a></li>
+            <li><a id="login_link">Login</a></li>
+            <li class="last"><a href="http://itunes.apple.com/de/app/catanoa/id477164859?mt=8" target="_blank"><img src="/appstore.png" alt="catanoa im App Store" /></a>
             <%= yield :navigation %>
           </ul>
         </div>
@@ -95,7 +97,7 @@
     <div class="footer">
       <div class="container">
         <div class="content">
-            &copy; provideal GmbH
+            &copy; metaminded UG (haftungsbeschränkt), provideal GmbH | <%= link_to "Kontakt", contact_path %> | <%= link_to "Impressum", imprint_path %>
         </div>
       </div>
     </div>

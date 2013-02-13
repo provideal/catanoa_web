@@ -60,6 +60,8 @@ CatanoaWeb::Application.routes.draw do
   match 'use_cases'     => 'pages#use_cases',     :path => 'individuelle_loesungen'
   match 'faq'           => 'pages#faq',           :path => 'faq'
   match 'contact'       => 'pages#contact',       :path => 'kontakt'
+  match 'imprint'       => 'pages#imprint',       :path => 'impressum'
+
   match 'toggle_login'  => 'pages#toggle_login'
   
   root :to  => 'pages#index'
